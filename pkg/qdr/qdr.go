@@ -449,6 +449,8 @@ type Listener struct {
 	Metrics          bool   `json:"metrics,omitempty" yaml:"metrics,omitempty"`
 	MaxFrameSize     int    `json:"maxFrameSize,omitempty" yaml:"max-frame-size,omitempty"`
 	MaxSessionFrames int    `json:"maxSessionFrames,omitempty" yaml:"max-session-frames,omitempty"`
+	IdleTimeoutSeconds int    `json:"idleTimeoutSeconds,omitempty" yaml:"idle-timeout-seconds",omitempty"`
+	InitialHandshakeTimeoutSeconds int `json:"initialHandshakeTimeoutSeconds,omitempty" yaml:"Initial-handshake-timeout-seconds",omitempty"`
 }
 
 func (l *Listener) SetMaxFrameSize(value int) {
@@ -471,6 +473,7 @@ type Connector struct {
 	LinkCapacity     int32  `json:"linkCapacity,omitempty"`
 	MaxFrameSize     int    `json:"maxFrameSize,omitempty"`
 	MaxSessionFrames int    `json:"maxSessionFrames,omitempty"`
+	IdleTimeoutSeconds int    `json:"idleTimeoutSeconds,omitempty" yaml:"idle-timeout-seconds",omitempty"`
 }
 
 func (c *Connector) SetMaxFrameSize(value int) {
